@@ -1,0 +1,594 @@
+/* Reset & Global Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Header & Video Background */
+header {
+    height: 90vh;
+    position: relative;
+}
+
+/* Background Video */
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-container video {
+    opacity: 0.4;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Navigation Bar */
+.navbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Left Side: Logo & Links */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.riotgame img {
+    height: 40px;
+    cursor: pointer;
+}
+
+.riotgame img:hover {
+    filter: brightness(0) saturate(100%) invert(17%) sepia(83%) saturate(7492%) hue-rotate(358deg) brightness(112%)
+        contrast(112%);
+}
+
+.riotlogo img {
+    height: 40px;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links li a {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 15px;
+    display: block;
+    position: relative;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-links li a:hover {
+    color: #e03a3e;
+}
+
+.nav-links li a.active {
+    color: #e03a3e;
+}
+
+/* Underline Effect (Simplified) */
+.nav-links li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: #e03a3e;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+    width: 100%;
+}
+
+/* Right Side: Search & Sign In */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Language Icon */
+.langimg img {
+    width: 28px;
+    height: 28px;
+    opacity: 0.7;
+}
+
+/* Search Box */
+.search-box {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 6px 12px;
+}
+
+.search-box i {
+    color: #ccc;
+    margin-right: 8px;
+}
+
+.search-box input {
+    background: none;
+    border: none;
+    outline: none;
+    color: #fff;
+    width: 120px;
+    font-size: 14px;
+}
+
+.search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Sign In Button */
+.sign-in {
+    background: #e03a3e;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.sign-in:hover {
+    background: #b32c2f;
+}
+
+/* What's Happening Section */
+.whats-happening {
+    color: white;
+    padding: 60px 80px;
+    background-color: black;
+}
+
+.whats-happening h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* Main Layout */
+.whats-container {
+    display: flex;
+    gap: 30px;
+}
+
+/* Left Side (Big News Box) */
+.whats-left {
+    flex: 2;
+    position: relative;
+}
+
+.featured-news {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.featured-news img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.featured-news:hover img {
+    transform: scale(1.03);
+}
+
+.news-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+}
+
+.news-info h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.news-category {
+    color: #e03a3e; /* Riot's red */
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+/* Right Side (Small News Items) */
+.whats-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.news-item {
+    display: flex;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 6px;
+    align-items: center;
+    transition: background 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.news-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.news-item img {
+    width: 100px;
+    height: 60px;
+    border-radius: 6px;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.news-text h4 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* See More Button */
+.see-more {
+    margin-top: 40px;
+    background: #e03a3e;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.see-more:hover {
+    background: #b32c2f;
+    transform: scale(1.03);
+}
+
+/* Games Section */
+.games-section {
+    background-color:#1f1f1f;
+    padding: 60px 80px;
+    color: white;
+}
+
+.games-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+/* Game Cards Grid */
+.games-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Individual Game Card */
+.game-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.game-card:hover {
+    transform: scale(1.03);
+}
+
+.game-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Game Overlay with Title */
+.game-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    text-align: center;
+}
+
+.game-overlay h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Platform Icons */
+.platform-icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.platform-icons img {
+    width: 22px;
+    height: 22px; 
+    opacity: 0.8;
+}
+
+/* Esports Section */
+.esports-section {
+    background-color: #1f1f1f;
+    padding: 60px 80px;
+    color: white;
+}
+
+.esports-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.esports-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.esports-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.esports-card:hover {
+    transform: scale(1.03);
+}
+
+.esports-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Entertainment Section */
+.entertainment-section {
+    background-color: #1f1f1f;
+    padding: 60px 80px;
+    color: white;
+}
+
+.entertainment-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.entertainment-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.entertainment-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.entertainment-card:hover {
+    transform: scale(1.03);
+}
+
+.entertainment-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Hiring Section */
+.hiring-section {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 80px;
+}
+
+.hiring-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.hiring-content {
+    flex: 1;
+}
+
+.hiring-content h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hiring-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    color: #2e2e2e;
+}
+
+.hiring-stats {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.stat h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.stat p {
+    font-size: 0.9rem;
+    color: #313131;
+}
+
+.explore-careers {
+    background-color: #e03a3e;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.explore-careers:hover {
+    background-color: #b32c2f;
+}
+
+.hiring-image {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.hiring-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Footer Section */
+.main-footer {
+    background-color: #1f1f1f;
+    color: #999;
+    padding: 30px 80px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.riot-logo img {
+    height: 30px;
+}
+
+.footer-links-list ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links-list a {
+    text-decoration: none;
+    color: #999;
+    font-size: 0.8rem;
+    transition: color 0.2s ease-in-out;
+}
+
+.footer-links-list a:hover {
+    color: white;
+}
+
+.social-icons a {
+    color: #999;
+    font-size: 1.1rem;
+    margin-left: 15px;
+    transition: color 0.2s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.7rem;
+    opacity: 0.7;
+}
+
+.to-the-surface {
+    color: #999;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.to-the-surface:hover {
+    color: white;
+}
+
+/* Utility Classes (from utility.css - keep these!) */
+.filter-white {
+    filter: brightness(0) invert(1);
+}
