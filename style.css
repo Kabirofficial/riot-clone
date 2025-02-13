@@ -587,8 +587,3 @@ header {
 .to-the-surface:hover {
     color: white;
 }
-
-/* Utility Classes (from utility.css - keep these!) */
-.filter-white {
-    filter: brightness(0) invert(1);
-}
